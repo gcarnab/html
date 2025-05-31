@@ -166,19 +166,98 @@ a:hover {
 .cv-content {
     background: #f0f4f8;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.08rem;
     overflow-x: auto;
     box-shadow: 0 2px 8px rgba(30, 60, 114, 0.07);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a2233;
+    text-align: left; /* Allinea il testo a sinistra */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cv-frame {
-    width: 100%;
-    height: 500px;
+.cv-content h1,
+.cv-content h2,
+.cv-content h3,
+.cv-content h4,
+.cv-content h5,
+.cv-content h6 {
+    color: #1e3c72;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.cv-content ul,
+.cv-content ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.cv-content li {
+    margin-bottom: 0.4em;
+}
+
+.cv-content a {
+    color: #2a5298;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.cv-content a:hover {
+    color: #1e3c72;
+}
+
+.cv-content hr {
     border: none;
-    border-radius: 8px;
-    background: #fff;
+    border-top: 1px solid #b3c6e7;
+    margin: 2em 0;
+}
+
+.cv-content strong {
+    color: #183153;
+}
+
+.cv-content em {
+    color: #2a5298;
+}
+
+.cv-content code {
+    background: #e3ecfa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.98em;
+}
+
+.cv-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: #2a5298;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.cv-download-link:hover {
+    color: #183153;
+}
+
+.cv-download-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+
+.cv-download-link:hover .cv-download-icon {
+    transform: translateY(2px) scale(1.1);
 }
 
 /* Footer */
