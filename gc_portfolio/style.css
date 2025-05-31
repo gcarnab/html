@@ -64,6 +64,21 @@ body {
     color: #7dbbc3;
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(44,62,80,0.10);
+}
+
 .menu-icon {
     display: none;
     font-size: 2rem;
