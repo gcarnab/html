@@ -1,27 +1,28 @@
-# Mario Rossi
+# Giuseppe Carnabuci
+
+## Teaching
+
+- **Professor of Computer Science @ Jean Monnet (Mariano Comense)** 
 
 ## Esperienza
 
-- **Sviluppatore Web** presso Azienda XYZ (2022 - oggi)
+- **Full Stack Developer** 
+- **Vision Software Engineer** 
+- **Energy Photovoltaics Engineer**
 
-  - Sviluppo di applicazioni web moderne
-  - Collaborazione in team Agile
-
-- **Tirocinante IT** presso Azienda ABC (2021 - 2022)
-  - Supporto tecnico e gestione reti
 
 ## Istruzione
 
-- **Laurea in Informatica**  
-  Università degli Studi di Milano, 2018-2021
+- **Laurea in Ingegneria Informatica**  
+  Università degli Studi La Sapienza (Roma)
 
-## Competenze
+## Skills
 
-- HTML, CSS, JavaScript
-- React, Node.js
-- Git, GitHub
+- Full stack development
+- AI
+- FV
 
-## Lingue
+## Languages
 
 - Italiano (madrelingua)
-- Inglese (B2)
+- Inglese (B1)
