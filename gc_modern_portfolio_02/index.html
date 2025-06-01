@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giuseppe Carnabuci</title>
+    <meta name="description" content="Portfolio personale di Giuseppe Carnabuci.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        // Configurazione Tailwind (opzionale, per personalizzazioni)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Esempio di font personalizzato
+                    },
+                    colors: {
+                        primary: '#3498db', // Blu
+                        secondary: '#2ecc71', // Verde
+                        accent: '#e74c3c', // Rosso
+                        dark: '#2c3e50', // Blu scuro/grigio
+                        light: '#ecf0f1' // Grigio chiaro
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark font-sans antialiased">
+
+    <header id="header" class="bg-dark text-white p-4 fixed w-full top-0 z-50 transition-shadow duration-300 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="https://gcprof.odoo.com" target="_blank"
+                class="text-2xl font-bold hover:text-primary transition-colors">Giuseppe Carnabuci </a>
+            <img src="./assets/gc_prof_logo.png" width="60">
+            <nav>
+                <ul class="flex space-x-4 md:space-x-6">
+                    <li><a href="#hero" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-primary transition-colors">Chi sono</a></li>
+                    <li><a href="#projects" class="hover:text-primary transition-colors">Progetti</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors">Contatti</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark text-white absolute top-full left-0 w-full z-40">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#hero" class="hover:text-primary transition-colors mobile-menu-link">Home</a></li>
+                <li><a href="#about" class="hover:text-primary transition-colors mobile-menu-link">Chi sono</a></li>
+                <li><a href="#projects" class="hover:text-primary transition-colors mobile-menu-link">Progetti</a></li>
+                <li><a href="#contact" class="hover:text-primary transition-colors mobile-menu-link">Contatti</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-cover bg-center pt-16"
+        style="background-image: url('https://images.unsplash.com/photo-1666816943035-15c29931e975?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="text-center bg-black bg-opacity-50 p-8 md:p-12 rounded-lg">
+            <img src="./assets/GC_profile.png" alt="Immagine Profilo di Giuseppe Carnabuci"
+                class="w-32 h-32 md:w-40 md:h-60 rounded-full mx-auto mb-6 border-4 border-primary shadow-lg object-cover object-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-2">Giuseppe Carnabuci</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">Software Engineer & Professor</p>
+            <a href="#projects"
+                class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform duration-300 hover:scale-105">
+                Scopri i Miei Progetti
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-dark">Chi Sono</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed space-y-4">
+                <p data-scrollreveal>
+                    Ciao! Sono <b>Giuseppe Carnabuci</b>,
+                    Software Engineer & Professor @ Jean Monnet (Mariano Comense)
+                </p>
+                <p data-scrollreveal>
+                    Le mie competenze principali includono Full Stack Development.
+                </p>
+                <p data-scrollreveal>
+                    Buona Navigazione!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-dark">I Miei Progetti</h2>
+            <div class="swiper-container project-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-scrollreveal>
+                        <div class="project-card bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl"
+                            data-tilt>
+                            <img src="https://placehold.co/600x400/3498db/ffffff?text=Elearning"
+                                alt="Anteprima Progetto 1" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark"> <a href="https://gcprof.odoo.com"
+                                        target="_blank"> gcprof.odoo.com </a> </h3>
+                                <p class="text-gray-600 text-sm mb-4"> La nostra piattaforma di E-learning </p>
+                                <button data-micromodal-trigger="modal-project-1"
+                                    class="w-full bg-secondary hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                                    Dettagli
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-scrollreveal>
+                        <div class="project-card bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl"
+                            data-tilt>
+                            <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Progetto+2"
+                                alt="Anteprima Progetto 2" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Nome Progetto 2</h3>
+                                <p class="text-gray-600 text-sm mb-4">Un altro progetto interessante. Ut enim ad minim
+                                    veniam, quis nostrud exercitation.</p>
+                                <button data-micromodal-trigger="modal-project-2"
+                                    class="w-full bg-secondary hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                                    Dettagli
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-scrollreveal>
+                        <div class="project-card bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl"
+                            data-tilt>
+                            <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Progetto+3"
+                                alt="Anteprima Progetto 3" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Nome Progetto 3</h3>
+                                <p class="text-gray-600 text-sm mb-4">Descrizione del terzo progetto. Duis aute irure
+                                    dolor in reprehenderit in voluptate.</p>
+                                <button data-micromodal-trigger="modal-project-3"
+                                    class="w-full bg-secondary hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                                    Dettagli
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-8 text-center"></div>
+                <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal micromodal-slide" id="modal-project-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl" role="dialog"
+                aria-modal="true" aria-labelledby="modal-project-1-title">
+                <header class="modal__header bg-primary text-white p-4 flex justify-between items-center">
+                    <h2 class="modal__title text-xl font-semibold" id="modal-project-1-title">
+                        Dettagli Progetto 1
+                    </h2>
+                    <button class="modal__close text-2xl hover:text-gray-300" aria-label="Chiudi modale"
+                        data-micromodal-close><i class="fas fa-times"></i></button>
+                </header>
+                <main class="modal__content p-6">
+                    <img src="https://placehold.co/800x300/3498db/ffffff?text=E-learning+Platform"
+                        alt="Dettaglio Progetto 1" class="w-full h-auto object-cover rounded-md mb-4">
+                    <p class="text-gray-700 mb-2"><strong>Mission : </strong> </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Qui troverete tutte le informazioni necessarie per apprendere le più recenti tecnologie
+                        informatiche, nonché tutte le risorse necessarie per accedere alle attività didattiche e di
+                        ricerca.
+                        La missione di questo sito web è di fornire agli studenti informazioni facilmente fruibili e
+                        risorse sulle tecnologie informatiche, con particolare attenzione alle innovazioni e alle
+                        tendenze emergenti. Il Professore è un esperto di informatica con oltre 20 anni di esperienza
+                        nel settore e il suo obiettivo è quello di condividere le sue conoscenze e la sua passione per
+                        la tecnologia informatica con gli altri.
+                    </p>
+                    <a href="http://gcprof.odoo.com" target="_blank"
+                        class="mt-4 inline-block bg-accent hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                        Visita il sito <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </main>
+                <footer class="modal__footer bg-gray-100 p-4 text-right">
+                    <button
+                        class="modal__btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors"
+                        data-micromodal-close aria-label="Chiudi questa finestra">Chiudi</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide" id="modal-project-2" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl" role="dialog"
+                aria-modal="true" aria-labelledby="modal-project-2-title">
+                <header class="modal__header bg-primary text-white p-4 flex justify-between items-center">
+                    <h2 class="modal__title text-xl font-semibold" id="modal-project-2-title">
+                        Dettagli Progetto 2
+                    </h2>
+                    <button class="modal__close text-2xl hover:text-gray-300" aria-label="Chiudi modale"
+                        data-micromodal-close><i class="fas fa-times"></i></button>
+                </header>
+                <main class="modal__content p-6">
+                    <img src="https://placehold.co/800x300/2ecc71/ffffff?text=Dettaglio+Progetto+2"
+                        alt="Dettaglio Progetto 2" class="w-full h-auto object-cover rounded-md mb-4">
+                    <p class="text-gray-700 mb-2"><strong>Tecnologie usate:</strong> Python, Django, PostgreSQL</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Descrizione dettagliata del Progetto 2. Questo progetto mirava a risolvere un problema specifico
+                        utilizzando un stack tecnologico differente. Le sfide includevano X, Y, Z e sono state superate
+                        con A, B, C.
+                    </p>
+                    <a href="#" target="_blank"
+                        class="mt-4 inline-block bg-accent hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                        Vedi su GitHub <i class="fab fa-github ml-1"></i>
+                    </a>
+                </main>
+                <footer class="modal__footer bg-gray-100 p-4 text-right">
+                    <button
+                        class="modal__btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors"
+                        data-micromodal-close aria-label="Chiudi questa finestra">Chiudi</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide" id="modal-project-3" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl" role="dialog"
+                aria-modal="true" aria-labelledby="modal-project-3-title">
+                <header class="modal__header bg-primary text-white p-4 flex justify-between items-center">
+                    <h2 class="modal__title text-xl font-semibold" id="modal-project-3-title">
+                        Dettagli Progetto 3
+                    </h2>
+                    <button class="modal__close text-2xl hover:text-gray-300" aria-label="Chiudi modale"
+                        data-micromodal-close><i class="fas fa-times"></i></button>
+                </header>
+                <main class="modal__content p-6">
+                    <img src="https://placehold.co/800x300/e74c3c/ffffff?text=Dettaglio+Progetto+3"
+                        alt="Dettaglio Progetto 3" class="w-full h-auto object-cover rounded-md mb-4">
+                    <p class="text-gray-700 mb-2"><strong>Tecnologie usate:</strong> Design UI/UX, Figma, Adobe XD</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Descrizione dettagliata del Progetto 3. Focus sul design e sull'esperienza utente.
+                        Processo di design, wireframing, prototipazione e test utente.
+                        L'obiettivo era creare un'interfaccia intuitiva e accattivante.
+                    </p>
+                    <a href="#" target="_blank"
+                        class="mt-4 inline-block bg-accent hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                        Guarda il Case Study <i class="fas fa-book-open ml-1"></i>
+                    </a>
+                </main>
+                <footer class="modal__footer bg-gray-100 p-4 text-right">
+                    <button
+                        class="modal__btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors"
+                        data-micromodal-close aria-label="Chiudi questa finestra">Chiudi</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="py-16 md:py-24 bg-dark text-light">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Mettiamoci in Contatto</h2>
+            <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto" data-scrollreveal>
+                Sono sempre aperto a nuove opportunità, collaborazioni o semplicemente per una chiacchierata.
+                Non esitare a contattarmi!
+            </p>
+            <div class="flex justify-center space-x-6 md:space-x-8 mb-10" data-scrollreveal>
+                <a href="mailto:tuaemail@example.com"
+                    class="text-gray-300 hover:text-primary transition-colors text-3xl md:text-4xl" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/tuoprofilo" target="_blank" rel="noopener noreferrer"
+                    class="text-gray-300 hover:text-primary transition-colors text-3xl md:text-4xl"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/tuoutente" target="_blank" rel="noopener noreferrer"
+                    class="text-gray-300 hover:text-primary transition-colors text-3xl md:text-4xl" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/tuoutente" target="_blank" rel="noopener noreferrer"
+                    class="text-gray-300 hover:text-primary transition-colors text-3xl md:text-4xl"
+                    aria-label="Twitter/X">
+                    <i class="fab fa-twitter"></i> </a>
+            </div>
+            <p class="text-gray-400" data-scrollreveal>Puoi anche compilare il form sottostante (funzionalità backend
+                non inclusa in questo template):</p>
+
+            <form class="max-w-xl mx-auto mt-8 space-y-6 text-left" data-scrollreveal>
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300">Nome Completo</label>
+                    <input type="text" name="name" id="name" autocomplete="name" required
+                        class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm text-white">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300">Indirizzo Email</label>
+                    <input type="email" name="email" id="email" autocomplete="email" required
+                        class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm text-white">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300">Messaggio</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm text-white"></textarea>
+                </div>
+                <div>
+                    <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark focus:ring-primary transition-colors">
+                        Invia Messaggio
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>&copy; <span id="current-year"></span> Giuseppe Carnabuci. Tutti i diritti riservati.</p>
+        <p class="text-sm">Realizzato con <i class="fas fa-heart text-accent"></i> e tanto caffè.</p>
+    </footer>
+
+    <button id="scrollTopBtn" title="Torna su"
+        class="hidden fixed bottom-5 right-5 bg-primary hover:bg-blue-700 text-white w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg flex items-center justify-center text-xl transition-opacity duration-300 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+        xintegrity="sha512-RD/5pZDP/6Mo27jcvVTF2CrQdr3+2iQvN8GZr2Lq2282qQJ4QEksK79U+GvPLNjkM9rF92V2QnQhEwBEumCTDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+            (function () {
+                emailjs.init("CCOY6TnC0TuWwEJK_"); // Sostituisci con il tuo User ID EmailJS
+            })();
+    </script>
+</body>
+
+</html>

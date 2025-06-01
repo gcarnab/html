@@ -1,0 +1,235 @@
+/* Importa un font (opzionale, se non usi la configurazione di Tailwind per questo) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+
+/* Impostazioni globali per lo scroll fluido (CSS nativo) */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: 'Inter', sans-serif; /* Applicato tramite config Tailwind */
+    /* background-color: #ecf0f1; /* light */
+    /* color: #2c3e50; /* dark */
+    /* line-height: 1.6; */
+}
+
+/* Stili per la navigazione sticky */
+#header.scrolled {
+    /* background-color: rgba(44, 62, 80, 0.95); /* dark con trasparenza */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Stili per le card dei progetti */
+.project-card {
+    /* Aggiungi qui stili specifici per le card se Tailwind non basta */
+    /* VanillaTilt.js aggiungerà 'transform-style: preserve-3d;' e 'transform: perspective(1000px);' */
+}
+
+.project-card img {
+    transition: transform 0.3s ease-out;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Stili per Swiper */
+.project-swiper {
+    width: 100%;
+    padding-top: 20px; /* Spazio per l'ombra delle card */
+    padding-bottom: 50px; /* Spazio per la paginazione */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f9f9f9; */ /* Per debug layout slide */
+    /* height: 400px; */ /* o l'altezza desiderata per le card */
+    padding: 10px; /* Per evitare che le ombre vengano tagliate */
+}
+
+.swiper-pagination-bullet {
+    background-color: #3498db; /* primary */
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #3498db; /* primary */
+    opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #3498db; /* primary */
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 40px !important; /* Sovrascrivi se necessario */
+    height: 40px !important; /* Sovrascrivi se necessario */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.1);
+    color: #2980b9; /* Un blu leggermente più scuro */
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px !important; /* Dimensione delle frecce */
+    font-weight: bold;
+}
+
+
+/* Stili per Micromodal */
+.modal {
+    font-family: 'Inter', sans-serif; /* Assicura che il font sia consistente */
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7); /* Sfondo più scuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assicura che sia sopra tutto */
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 0; /* Rimosso padding, gestito da header/main/footer */
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 90vh;
+  width: 90%;
+  max-width: 700px; /* Larghezza massima del modale */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal__header {
+  /* border-bottom: 1px solid #ddd; */
+  /* padding: 1rem 1.5rem; */ /* Spostato su Tailwind */
+}
+
+.modal__title {
+  /* margin: 0; */
+  /* font-size: 1.5rem; */ /* Spostato su Tailwind */
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+  /* font-size: 1.5rem; */ /* Spostato su Tailwind */
+  cursor: pointer;
+}
+
+.modal__content {
+  /* padding: 1.5rem; */ /* Spostato su Tailwind */
+  line-height: 1.6;
+}
+
+.modal__footer {
+  /* border-top: 1px solid #ddd; */
+  /* padding: 1rem 1.5rem; */ /* Spostato su Tailwind */
+  /* text-align: right; */ /* Spostato su Tailwind */
+}
+
+.modal__btn {
+  /* padding: 0.75rem 1.25rem; */ /* Spostato su Tailwind */
+  /* border-radius: 4px; */ /* Spostato su Tailwind */
+  /* transition: background-color 0.2s; */ /* Spostato su Tailwind */
+}
+
+/* Animazioni per Micromodal (slide) */
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+@keyframes mmfadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); opacity:0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes mmslideOut {
+  from { transform: translateY(0); opacity:1; }
+  to { transform: translateY(-15%); opacity:0; }
+}
+
+/* Stile per il pulsante Torna Su */
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+#scrollTopBtn.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Stili per ScrollReveal (solo se necessario per sovrascrivere/resettare) */
+[data-scrollreveal] {
+    /* Opacità iniziale e trasformazione gestite da ScrollReveal.js */
+    /* Puoi aggiungere qui transizioni se vuoi, ma ScrollReveal le gestisce */
+    /* visibility: hidden; /* ScrollReveal lo gestisce */
+}
+
+/* Responsive adjustments for mobile menu */
+@media (max-width: 767px) {
+    #header nav {
+        display: none; /* Nasconde la navigazione desktop su mobile */
+    }
+    #mobile-menu-button {
+        display: block; /* Mostra il pulsante hamburger */
+    }
+    /* Stili per quando il menu mobile è aperto */
+    #mobile-menu.open {
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    #mobile-menu-button {
+        display: none; /* Nasconde il pulsante hamburger su desktop */
+    }
+    #mobile-menu {
+        display: none !important; /* Assicura che il menu mobile sia nascosto su desktop */
+    }
+}
